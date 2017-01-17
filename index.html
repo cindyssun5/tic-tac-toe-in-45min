@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script   src="https://code.jquery.com/jquery-3.0.0.slim.min.js"   integrity="sha256-Rf4BadfyCtsvHmO89BUZcbYvNNvZvOT08ALfEzvCsD0="   crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    var board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var player = 1;
+    $(document).ready(function() {
+      
+
+      $( ".cell" ).click(function() {
+        var id = this.id;
+        board[id] = player;
+
+        if (player === 1) {
+          $("#"+id).text("X");
+          player = 2;
+        } else {
+          $("#"+id).text("O");
+          player = 1;
+        }
+
+
+
+      });
+
+
+      if (player === 1) {
+        $(".players").text("Player One's Turn");
+      } else if (player === 2) {
+        $(".players").text("Player Two's Turn");
+      }
+
+
+
+    });
+
+    </script>
+
+  </head>
+  <body>
+    <center>
+      <table width="300px" border="1px">
+        <tr height="100px"> 
+          <td class="cell" id="0">            
+          </td>
+          <td class="cell" id="1">
+          </td>
+          <td class="cell" id="2">
+          </td>
+        </tr>
+        <tr height="100px">
+          <td class="cell" id="3">
+          </td>
+          <td class="cell" id="4">
+          </td>
+          <td class="cell" id="5">
+          </td>
+        </tr>
+        <tr height="100px">
+          <td class="cell" id="6">
+          </td>
+          <td class="cell" id="7">
+          </td>
+          <td class="cell" id="8">
+          </td>
+        </tr>
+      </table>
+      <br/>
+      <div class ="players">
+
+      </div>
+    </center>
+    
+  </body>
+
+</html>
+
