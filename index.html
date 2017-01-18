@@ -8,6 +8,14 @@
     var playerTwo = [];
     $(document).ready(function() {
       var board = {};
+
+      $( ".reset" ).click(function() {
+        board = {};
+        player = 1;
+        $(".cell").empty();
+        $(".player").text("Player 1's Turn");
+      })
+
       $( ".cell" ).click(function() {
         var id = this.id;
         
@@ -84,8 +92,10 @@
       </table>
       <br/>
       <div class ="player">
-        Player One's Turn
+        Player 1's Turn
       </div>
+      <br/>
+      <button class="reset"> Reset Board </button>
     </center>
     
   </body>
